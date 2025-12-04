@@ -1,0 +1,18 @@
+# Core VLM stack (vLLM only on Linux VM, not on Windows)
+vllm>=0.8.5; sys_platform != "win32"
+transformers>=4.44.0
+huggingface_hub>=0.24.0
+
+# OpenAI-compatible client (will talk to vLLM server)
+openai>=1.44.0
+
+# Vision / video tools
+opencv-python>=4.10.0.0
+pillow>=10.0.0
+moviepy>=1.0.3
+
+# Utilities
+numpy>=1.26.0
+tqdm>=4.66.0
+python-dotenv>=1.0.1
+pyyaml>=6.0.1
