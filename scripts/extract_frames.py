@@ -1,66 +1,90 @@
-# scripts/extract_frames.py
+#!/usr/bin/env python3
+"""
+FRAME EXTRACTION SCRIPT
 
-import os
+What this does:
+1. Looks in data/videos_raw/ for .mp4 files
+2. Extracts 1 frame per second from each video
+3. Saves frames as .jpg in data/frames/<video_name>/
+
+Usage:
+    python scripts/extract_frames.py --fps 1
+"""
+
 import sys
-import argparse
+import os
+from pathlib import Path
 
-# Make sure Python can find the "src" package when running this script directly
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
-if PROJECT_ROOT not in sys.path:
-    sys.path.insert(0, PROJECT_ROOT)
+# Add project root to Python path so we can import src.*
+SCRIPT_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = SCRIPT_DIR.parent
+sys.path.insert(0, str(PROJECT_ROOT))
 
+# Import our code
 from src.config import get_paths
 from src.frame_extractor import extract_frames_from_video
 
 
 def main():
-    parser = argparse.ArgumentParser(
-        description="Extract frames from all videos in data/videos_raw."
-    )
-    parser.add_argument(
-        "--fps",
-        type=int,
-        default=1,
-        help="Number of frames to sample per second from each video (default: 1).",
-    )
-    args = parser.parse_args()
-
+    """Main function that runs when you execute this script"""
+    
+    # Get folder paths
     paths = get_paths()
     videos_dir = paths["videos_raw"]
     frames_root = paths["frames"]
-
-    # Ensure the frames root directory exists
-    os.makedirs(frames_root, exist_ok=True)
-
-    # List all files in videos_raw
+    
+    # Make sure frames folder exists
+    frames_root.mkdir(parents=True, exist_ok=True)
+    
+    # Find all video files in videos_raw/
     video_files = [
-        f
-        for f in os.listdir(videos_dir)
-        if f.lower().endswith((".mp4", ".mov", ".mkv", ".avi", ".flv", ".wmv"))
+        f for f in videos_dir.iterdir()
+        if f.suffix.lower() in ['.mp4', '.mov', '.mkv', '.avi']
     ]
-
+    
+    # Check if we found any videos
     if not video_files:
-        print(f"[INFO] No video files found in: {videos_dir}")
-        print("Place your Free Fire videos there, then run this script again.")
+        print("="*60)
+        print("⚠️  NO VIDEOS FOUND!")
+        print("="*60)
+        print(f"Looking in: {videos_dir}")
+        print("\nPlease put your .mp4 videos in that folder, then run again.")
         return
-
-    for fname in video_files:
-        video_path = os.path.join(videos_dir, fname)
-        video_name, _ = os.path.splitext(fname)
-
-        # Each video gets its own subfolder inside data/frames
-        video_frame_dir = os.path.join(frames_root, video_name)
-        print(f"[INFO] Extracting frames for {fname} → {video_frame_dir}")
-
+    
+    print("="*60)
+    print("🎬 FRAME EXTRACTION STARTING")
+    print("="*60)
+    print(f"Found {len(video_files)} video(s)")
+    print()
+    
+    # Process each video
+    for video_file in video_files:
+        # Get video name without extension
+        video_name = video_file.stem  # e.g., "5ap2epx9kdjx1g"
+        
+        # Create folder for this video's frames
+        video_frames_dir = frames_root / video_name
+        
+        print(f"Processing: {video_file.name}")
+        print(f"Output to: {video_frames_dir}")
+        print()
+        
         try:
+            # Extract frames (1 per second by default)
             extract_frames_from_video(
-                video_path=video_path,
-                output_dir=video_frame_dir,
-                fps=args.fps,
+                video_path=video_file,
+                output_dir=video_frames_dir,
+                fps=1  # 1 frame per second
             )
+            print()
         except Exception as e:
-            print(f"[ERROR] Failed to process {fname}: {e}")
+            print(f"❌ ERROR: {e}")
+            print()
+    
+    print("="*60)
+    print("✅ FRAME EXTRACTION COMPLETE")
+    print("="*60)
+    print(f"Check frames in: {frames_root}")
 
 
 if __name__ == "__main__":

@@ -1,8 +1,9 @@
 # Free Fire VLM Analyzer
 
-This project analyzes Garena Free Fire gameplay videos using the Qwen3-VL-2B-Instruct vision-language model
-running on a remote GPU virtual machine (VM) with vLLM.
+Analyzes Free Fire gameplay videos using AI.
 
-- All coding is done locally on Windows.
-- The VM is only used to run the model and scripts.
-- Dependencies are managed via `requirements.txt` for reproducible environments.
+## Quick Start
+1. Put videos in `data/videos_raw/`
+2. Run: `python scripts/validate_setup.py`
+3. Run: `python scripts/extract_frames.py --fps 1`
+4. Run: `python scripts/analyze_video.py --video-id <VIDEO_NAME> --test`

@@ -1,40 +1,81 @@
-# src/prompts.py
-
-BASE_SYSTEM_PROMPT = """
-You are an esports analyst specialising in Garena Free Fire.
-
-You analyse gameplay from images (frames) and short sequences.
-Focus on:
-- player positioning and rotation choices
-- crosshair placement and aim discipline
-- usage of cover and high ground
-- awareness of enemies, zone, and resources
-- decision making (aggressive vs defensive, risk vs reward)
-
-Always respond in valid JSON so that another script can parse it.
-Do NOT include any extra commentary outside the JSON.
+"""
+This file contains the prompt we send to the AI model.
+The prompt tells the AI what to look for in Free Fire gameplay.
 """
 
+# This is what we ask the AI to do for each frame
+FREE_FIRE_PROMPT = '''Analyze this Free Fire gameplay frame and respond with valid JSON ONLY.
 
-def get_frame_analysis_prompt() -> str:
-    """
-    Returns the user prompt that will be sent along with each frame.
+RULES:
+1. Output must be valid JSON (starts with { ends with })
+2. No markdown, no extra text, JUST JSON
+3. Use exact field names below
+4. If unsure, use "Unknown" for text, 0 for numbers, false for yes/no
 
-    The model should output a JSON object with fixed keys.
+JSON FORMAT:
+{
+  "gameplay_summary": "Describe what's happening in 2-3 sentences",
+  "attributes": {
+    "session_game_mode": "One of: Battle Royale, Clash Squad, Training Mode, Social Hub, Unknown",
+    "map_area_type": "One of: Training Room, Combat Zone, Social Hub, Unknown",
+    "player_inferred_skill_level": "One of: Novice, Intermediate, Expert, Unknown",
+    "weapon_type_used": "One of: Sniper Rifle, Assault Rifle, Pistol, Shotgun, Melee, SMG, Other, Unknown",
+    "aggressive_playstyle_observed": false,
+    "team_coordination_observed": false,
+    "objective_pursuit_observed": false,
+    "exploration_behavior_observed": false,
+    "social_interaction_observed": false,
+    "match_result": "One of: Win, Loss, Draw, Not Applicable, Incomplete",
+    "eliminations_count": 0,
+    "player_deaths_count": 0,
+    "rounds_lost_prior": 0,
+    "unfair_gameplay_attributed_to_hacker": false,
+    "repeated_failures_observed": false,
+    "monetization_elements_present_lobby": false,
+    "player_idle_in_lobby": false,
+    "shop_opened_observed": false,
+    "purchase_event_observed": false,
+    "session_ended_cleanly": true
+  },
+  "major_events": [
+    {
+      "timestamp": "00:00",
+      "event_type": "Kill, Death, Shop Interaction, etc.",
+      "description": "What happened"
+    }
+  ]
+}
+
+WHAT TO LOOK FOR:
+- Skill: Gloo Wall usage, headshots, movement
+- Frustration: Repeated deaths, stuck in same spot
+- Money: Shop open, purchases, vending machines
+- Social: Emotes, voice chat, team play'''
+
+
+def get_analysis_prompt():
     """
-    return (
-        "You are looking at a single frame from a Garena Free Fire match. "
-        "Analyse only what is visible in this image. "
-        "Return your answer as a JSON object with exactly these keys:\n\n"
-        "{\n"
-        '  \"situation_summary\": str,          // What is happening in this frame?\n'
-        '  \"player_positioning\": str,        // Is the player well-positioned? Mention cover, angles, high ground.\n'
-        '  \"crosshair_placement\": str,       // Is the crosshair at a good height and location relative to enemies?\n'
-        '  \"map_and_cover_usage\": str,       // How is the player using available cover / terrain?\n'
-        '  \"threats_and_risks\": str,         // Immediate threats visible in the frame.\n'
-        '  \"suggested_improvement\": str      // One or two specific, practical tips.\n'
-        "}\n\n"
-        "IMPORTANT:\n"
-        "- Only output JSON.\n"
-        "- Do not add any extra text before or after the JSON.\n"
-    )
+    Returns the prompt to send to the AI.
+    
+    Returns:
+        str: The complete prompt text
+    """
+    return FREE_FIRE_PROMPT
+
+
+# Simple test prompt (used by validation script)
+VALIDATION_PROMPT = '''Look at this image and respond with ONLY this JSON:
+{
+  "test": "success",
+  "image_visible": true
+}'''
+
+
+def get_validation_prompt():
+    """
+    Returns a simple test prompt.
+    
+    Returns:
+        str: Simple prompt for testing
+    """
+    return VALIDATION_PROMPT
