@@ -4,6 +4,7 @@ It loads the model and runs it on images.
 """
 
 import torch
+from pathlib import Path
 from PIL import Image
 from transformers import AutoProcessor, Qwen3VLForConditionalGeneration
 
