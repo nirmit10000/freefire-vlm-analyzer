@@ -1,0 +1,281 @@
+{
+  "video_id": "fxvk4xcb4i5pbn",
+  "analysis_metadata": {
+    "timestamp": "2025-12-12T09:42:49.709149",
+    "model": "Qwen/Qwen3-VL-2B-Instruct",
+    "test_mode": false
+  },
+  "aggregated_statistics": {
+    "total_frames_processed": 33,
+    "successful_analyses": 33,
+    "failed_analyses": 0,
+    "total_eliminations": 0,
+    "total_deaths": 0
+  },
+  "frame_analyses": [
+    {
+      "timestamp": "00:00",
+      "event_type": "Training",
+      "description": "Player is in a training room, aiming at targets with a pistol. The player is in a ready stance and has 7/30 bullets.",
+      "error": false,
+      "frame_filename": "frame_00000.jpg",
+      "processing_timestamp": "2025-12-12T09:36:59.033640"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Idle",
+      "description": "Player is standing in the training room, not engaging in combat or any other activity.",
+      "error": false,
+      "frame_filename": "frame_00005.jpg",
+      "processing_timestamp": "2025-12-12T09:37:10.016032"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Idle",
+      "description": "Player is standing in a training room with no active actions.",
+      "error": false,
+      "frame_filename": "frame_00010.jpg",
+      "processing_timestamp": "2025-12-12T09:37:21.040761"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Idle",
+      "description": "Player is standing in a training room, not engaging in any combat or interaction.",
+      "error": false,
+      "frame_filename": "frame_00015.jpg",
+      "processing_timestamp": "2025-12-12T09:37:31.883103"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Idle",
+      "description": "Player is standing in a training room with no action.",
+      "error": false,
+      "frame_filename": "frame_00020.jpg",
+      "processing_timestamp": "2025-12-12T09:37:43.128693"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Setup",
+      "description": "Player is in a training room, ready for a mission. No combat has started.",
+      "error": false,
+      "frame_filename": "frame_00025.jpg",
+      "processing_timestamp": "2025-12-12T09:37:54.257668"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Unknown",
+      "description": "Player is in a neutral position, not engaged in combat or social interaction.",
+      "error": false,
+      "frame_filename": "frame_00030.jpg",
+      "processing_timestamp": "2025-12-12T09:38:05.471783"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Kill",
+      "description": "Player kills an enemy with a sniper rifle.",
+      "error": false,
+      "frame_filename": "frame_00035.jpg",
+      "processing_timestamp": "2025-12-12T09:38:16.270206"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Unknown",
+      "description": "Player is in a training room, holding a pistol and preparing to shoot.",
+      "error": false,
+      "frame_filename": "frame_00040.jpg",
+      "processing_timestamp": "2025-12-12T09:38:26.851368"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Kill",
+      "description": "Player shoots and kills an enemy with a crossbow.",
+      "error": false,
+      "frame_filename": "frame_00045.jpg",
+      "processing_timestamp": "2025-12-12T09:38:37.800064"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Kill",
+      "description": "The player successfully kills an enemy with a pistol, earning 90 points.",
+      "error": false,
+      "frame_filename": "frame_00050.jpg",
+      "processing_timestamp": "2025-12-12T09:38:48.910388"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Unknown",
+      "description": "Player is in a training mode, moving through a training room with a pistol equipped.",
+      "error": false,
+      "frame_filename": "frame_00055.jpg",
+      "processing_timestamp": "2025-12-12T09:38:59.615708"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Kill",
+      "description": "A player is attacking an enemy with a rifle, resulting in a kill.",
+      "error": false,
+      "frame_filename": "frame_00060.jpg",
+      "processing_timestamp": "2025-12-12T09:39:10.182719"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Action",
+      "description": "Player is running through a training room, likely preparing for a mission or training exercise.",
+      "error": false,
+      "frame_filename": "frame_00065.jpg",
+      "processing_timestamp": "2025-12-12T09:39:20.502759"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Kill",
+      "description": "Player shoots and kills an enemy with a pistol.",
+      "error": false,
+      "frame_filename": "frame_00070.jpg",
+      "processing_timestamp": "2025-12-12T09:39:30.776125"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Unknown",
+      "description": "Player is in a training room, moving around and preparing for a match.",
+      "error": false,
+      "frame_filename": "frame_00075.jpg",
+      "processing_timestamp": "2025-12-12T09:39:41.839188"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Unknown",
+      "description": "Player is in a training room, moving around with no combat or interaction.",
+      "error": false,
+      "frame_filename": "frame_00080.jpg",
+      "processing_timestamp": "2025-12-12T09:39:52.735854"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Kill",
+      "description": "Player shoots at a target and hits it.",
+      "error": false,
+      "frame_filename": "frame_00085.jpg",
+      "processing_timestamp": "2025-12-12T09:40:03.451909"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Unknown",
+      "description": "The player is in a training mode, possibly during a practice session. The screen shows a menu with options to 'CHIA SẺ', 'THOÁT', and 'THỬ LẠI'. The player is standing in a large indoor area, possibly a training room, with a weapon equipped.",
+      "error": false,
+      "frame_filename": "frame_00090.jpg",
+      "processing_timestamp": "2025-12-12T09:40:17.463552"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Start of Training Session",
+      "description": "The player begins the training session in the training room, with the game interface showing the weapon and ammo count, and the player's health at 200/200.",
+      "error": false,
+      "frame_filename": "frame_00095.jpg",
+      "processing_timestamp": "2025-12-12T09:40:29.641904"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Session End",
+      "description": "The session has ended due to a lost connection or other issue, prompting a confirmation dialog.",
+      "error": false,
+      "frame_filename": "frame_00100.jpg",
+      "processing_timestamp": "2025-12-12T09:40:39.966161"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Start",
+      "description": "The player is in the lobby, ready to start a match.",
+      "error": false,
+      "frame_filename": "frame_00105.jpg",
+      "processing_timestamp": "2025-12-12T09:40:50.769451"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Start of Session",
+      "description": "Player is in the lobby, ready to begin the match.",
+      "error": false,
+      "frame_filename": "frame_00110.jpg",
+      "processing_timestamp": "2025-12-12T09:41:00.921722"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Start of Session",
+      "description": "Player is in the lobby, ready to begin the training mode.",
+      "error": false,
+      "frame_filename": "frame_00115.jpg",
+      "processing_timestamp": "2025-12-12T09:41:11.267765"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Start of Session",
+      "description": "Player is in the lobby, ready to start a match.",
+      "error": false,
+      "frame_filename": "frame_00120.jpg",
+      "processing_timestamp": "2025-12-12T09:41:21.575468"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Idle",
+      "description": "Player is standing in the lobby, not engaged in any action.",
+      "error": false,
+      "frame_filename": "frame_00125.jpg",
+      "processing_timestamp": "2025-12-12T09:41:33.415682"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Idle",
+      "description": "Player is standing in the lobby, not actively playing.",
+      "error": false,
+      "frame_filename": "frame_00130.jpg",
+      "processing_timestamp": "2025-12-12T09:41:43.635898"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Start of Game",
+      "description": "The player is in the lobby, ready to start a match.",
+      "error": false,
+      "frame_filename": "frame_00135.jpg",
+      "processing_timestamp": "2025-12-12T09:41:54.031956"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Shop Interaction",
+      "description": "The player is in the shop, possibly purchasing weapons or items.",
+      "error": false,
+      "frame_filename": "frame_00140.jpg",
+      "processing_timestamp": "2025-12-12T09:42:05.665505"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Unknown",
+      "description": "A pop-up window titled 'BÍ DANH BẠN BÈ' appears with a text input field and a 'X' button. The player is likely attempting to select a friend or team member.",
+      "error": false,
+      "frame_filename": "frame_00145.jpg",
+      "processing_timestamp": "2025-12-12T09:42:17.747305"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Idle",
+      "description": "Player is standing in the lobby, not engaged in any action.",
+      "error": false,
+      "frame_filename": "frame_00150.jpg",
+      "processing_timestamp": "2025-12-12T09:42:28.819976"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Idle",
+      "description": "Player is in the lobby, not actively playing.",
+      "error": false,
+      "frame_filename": "frame_00155.jpg",
+      "processing_timestamp": "2025-12-12T09:42:38.989881"
+    },
+    {
+      "timestamp": "00:00",
+      "event_type": "Unknown",
+      "description": "Player is viewing squad information and achievements.",
+      "error": false,
+      "frame_filename": "frame_00160.jpg",
+      "processing_timestamp": "2025-12-12T09:42:49.708953"
+    }
+  ]
+}
